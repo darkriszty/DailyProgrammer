@@ -1,4 +1,4 @@
-﻿namespace DP._20160113.BLL
+﻿namespace DP._20160113.BLL.Strings
 {
 	/// <summary>
 	/// Compute the distance between two strings.

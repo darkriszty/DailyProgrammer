@@ -39,10 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILevenshteinDistanceCalculator.cs" />
-    <Compile Include="IStringRandomizer.cs" />
-    <Compile Include="StringRandomizer.cs" />
-    <Compile Include="LevenshteinDistanceCalculator.cs" />
+    <Compile Include="Strings\ILevenshteinDistanceCalculator.cs" />
+    <Compile Include="Strings\IStringRandomizer.cs" />
+    <Compile Include="Strings\StringRandomizer.cs" />
+    <Compile Include="Strings\LevenshteinDistanceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

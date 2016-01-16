@@ -1,4 +1,4 @@
-﻿using DP._20160113.BLL;
+﻿using DP._20160113.BLL.Strings;
 
 namespace DP._20160113.Console
 {

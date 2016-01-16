@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DP._20160113.BLL
+namespace DP._20160113.BLL.Strings
 {
 	/// <summary>
 	/// Responsible to randomize strings.
