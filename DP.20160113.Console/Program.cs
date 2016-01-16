@@ -12,11 +12,16 @@ namespace DP._20160113.Console
 		 * length as the input. The only thing you want to use the input for is to determine the fitness of your function, 
 		 * so you don't want to just cheat by printing out the input string!
 		 */
+
+		private const string INPUT = "Hello, world!";
+
 		static void Main(string[] args)
 		{
 			ILevenshteinDistanceCalculator calculator = new LevenshteinDistanceCalculator();
+			IStringRandomizer randomizer = new StringRandomizer();
 
-			System.Console.WriteLine(calculator.GetDistance("Hello, world!", "olleH, dlrow!"));
+			System.Console.WriteLine("Random input: {0}", randomizer.GetRandomizedInput(INPUT));
+			System.Console.WriteLine("Random input distance from original input: {0}", calculator.GetDistance(INPUT, "olleH, dlrow!"));
 		}
 	}
 }

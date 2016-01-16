@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ILevenshteinDistanceCalculator.cs" />
+    <Compile Include="IStringRandomizer.cs" />
+    <Compile Include="StringRandomizer.cs" />
     <Compile Include="LevenshteinDistanceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
