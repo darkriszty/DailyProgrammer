@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DP._20160113.BLL;
 
 namespace DP._20160113.Console
 {
@@ -10,6 +6,9 @@ namespace DP._20160113.Console
 	{
 		static void Main(string[] args)
 		{
+			ILevenshteinDistanceCalculator calculator = new LevenshteinDistanceCalculator();
+
+			System.Console.WriteLine(calculator.GetDistance("Hello, world!", "olleH, dlrow!"));
 		}
 	}
 }
