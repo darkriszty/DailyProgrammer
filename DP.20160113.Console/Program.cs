@@ -1,4 +1,5 @@
-﻿using DP._20160113.BLL.Strings;
+﻿using System;
+using DP._20160113.BLL.Strings;
 
 namespace DP._20160113.Console
 {

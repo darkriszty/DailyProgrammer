@@ -38,5 +38,21 @@ namespace DP._20160113.BLL.Strings
 
 			return result;
 		}
+
+		/// <summary>
+		/// Randomize a given number of characters in the input string.
+		/// </summary>
+		public string RandomizeCharacter(string input, int charactersToRandomize)
+		{
+			char[] result = input.ToCharArray();
+			for (int i = 0; i < charactersToRandomize; i++)
+			{
+				int positionToRandomize = _random.Next(input.Length);
+				int nextCharIndex = _random.Next(ALLOWED_CHARACTERS.Length);
+				result[positionToRandomize] = ALLOWED_CHARACTERS[nextCharIndex];
+			}
+
+			return result.ToString();
+		}
 	}
 }
