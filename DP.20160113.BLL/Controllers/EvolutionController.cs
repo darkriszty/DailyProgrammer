@@ -50,13 +50,13 @@ namespace DP._20160113.BLL.Controllers
 			Stopwatch stopwatch = Stopwatch.StartNew();
 			Generation lastGeneration = initialGeneration;
 			bool finalGenerationFound = false;
-			int generationCount = 1;
+			int generationCount = 0;
 
 			// create better generations with each iteration to reach the expected result
 			while (!finalGenerationFound)
 			{
 				lastGeneration = CreateBetterGeneration(lastGeneration, expectedOutput);
-				Console.WriteLine("Gen: {0} | Fitness: {1} | {2}", generationCount, lastGeneration.Offspring.Fitness, lastGeneration.Offspring.Child);
+				Console.WriteLine("Gen: {0} | Fitness: {1} | {2}", ++generationCount, lastGeneration.Offspring.Fitness, lastGeneration.Offspring.Child);
 				finalGenerationFound = lastGeneration.Offspring.Fitness == 0;
 			}
 			stopwatch.Stop();
