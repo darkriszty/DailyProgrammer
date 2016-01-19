@@ -13,7 +13,7 @@ namespace DP._20160113.BLL.IoC
 		{
 			container.RegisterType<IStringDistanceCalculator, CharDistanceCalculator>();
 			container.RegisterType<IStringRandomizer, StringRandomizer>(new ContainerControlledLifetimeManager());
-			container.RegisterType<IChildFactory, ChildFactory>(
+			container.RegisterType<IChildFactory, ChildFactory>(new ContainerControlledLifetimeManager(),
 				new InjectionConstructor(
 					new ResolvedParameter<IStringRandomizer>(), 
 					mutationCountPerGeneration

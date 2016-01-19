@@ -12,11 +12,14 @@ namespace DP._20160113.BLL.Generations
 	{
 		private readonly IStringRandomizer _stringRandomizer;
 		private readonly int _mutationCountPerGeneration;
+		private readonly Random _random;
 
 		public ChildFactory(IStringRandomizer stringRandomizer, int mutationCountPerGeneration)
 		{
 			_stringRandomizer = stringRandomizer;
 			_mutationCountPerGeneration = mutationCountPerGeneration;
+
+			_random = new Random();
 		}
 
 		/// <summary>
@@ -26,6 +29,7 @@ namespace DP._20160113.BLL.Generations
 		/// <returns>The new child</returns>
 		public string GetNewChild(Ancestor ancestor)
 		{
+
 			if (!ancestor.Parents.Any())
 			{
 				throw new ArgumentException("Parents must exist to create offsprings!");
@@ -42,7 +46,8 @@ namespace DP._20160113.BLL.Generations
 			int cutOffSize = length / ancestor.Parents.Count;
 
 			int lastCutoffPoint = 0;
-			foreach (string parent in ancestor.Parents)
+			IOrderedEnumerable<string> randomizedParents = ancestor.Parents.OrderBy(p => _random.Next());
+			foreach (string parent in randomizedParents)
 			{
 				sb.Append(parent.Substring(lastCutoffPoint, cutOffSize));
 				lastCutoffPoint += cutOffSize;
@@ -53,7 +58,7 @@ namespace DP._20160113.BLL.Generations
 			if (missing > 0)
 			{
 				// if not then copy from the beginning of the last parent
-				string lastParent = ancestor.Parents.Last();
+				string lastParent = randomizedParents.Last();
 				sb.Append(lastParent.Substring(0, missing));
 			}
 
