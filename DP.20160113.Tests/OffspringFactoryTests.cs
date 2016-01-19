@@ -17,7 +17,7 @@ namespace DP._20160113.Tests
 			const int mutationCount = 1;
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
-			var offspringFactory = container.Resolve<IOffspringFactory>();
+			var offspringFactory = container.Resolve<IChildFactory>();
 			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
@@ -26,7 +26,7 @@ namespace DP._20160113.Tests
 			});
 
 			// act
-			string offspring = offspringFactory.GetNewOffspring(g1);
+			string offspring = offspringFactory.GetNewChild(g1);
 
 			// assert
 			Assert.IsNotNull(offspring);
@@ -41,7 +41,7 @@ namespace DP._20160113.Tests
 			const int mutationCount = 1;
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
-			var offspringFactory = container.Resolve<IOffspringFactory>();
+			var offspringFactory = container.Resolve<IChildFactory>();
 			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
@@ -50,7 +50,7 @@ namespace DP._20160113.Tests
 			});
 
 			// act
-			string offspring = offspringFactory.GetNewOffspring(g1);
+			string offspring = offspringFactory.GetNewChild(g1);
 
 			// assert
 			Assert.IsNotNull(offspring);
@@ -65,7 +65,7 @@ namespace DP._20160113.Tests
 			const int mutationCount = 2;
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
-			var offspringFactory = container.Resolve<IOffspringFactory>();
+			var offspringFactory = container.Resolve<IChildFactory>();
 			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
@@ -74,7 +74,7 @@ namespace DP._20160113.Tests
 			});
 
 			// act
-			string offspring = offspringFactory.GetNewOffspring(g1);
+			string offspring = offspringFactory.GetNewChild(g1);
 
 			// assert
 			Assert.IsNotNull(offspring);
@@ -89,7 +89,7 @@ namespace DP._20160113.Tests
 			const int mutationCount = 2;
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
-			var offspringFactory = container.Resolve<IOffspringFactory>();
+			var offspringFactory = container.Resolve<IChildFactory>();
 			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
@@ -98,7 +98,7 @@ namespace DP._20160113.Tests
 			});
 
 			// act
-			string offspring = offspringFactory.GetNewOffspring(g1);
+			string offspring = offspringFactory.GetNewChild(g1);
 
 			// assert
 			Assert.IsNotNull(offspring);
@@ -113,7 +113,7 @@ namespace DP._20160113.Tests
 			const int mutationCount = 1;
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
-			var offspringFactory = container.Resolve<IOffspringFactory>();
+			var offspringFactory = container.Resolve<IChildFactory>();
 			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
@@ -123,7 +123,7 @@ namespace DP._20160113.Tests
 			});
 
 			// act
-			string offspring = offspringFactory.GetNewOffspring(g1);
+			string offspring = offspringFactory.GetNewChild(g1);
 
 			// assert
 			Assert.IsNotNull(offspring);
@@ -138,7 +138,7 @@ namespace DP._20160113.Tests
 			const int mutationCount = 1;
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
-			var offspringFactory = container.Resolve<IOffspringFactory>();
+			var offspringFactory = container.Resolve<IChildFactory>();
 			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
@@ -148,7 +148,7 @@ namespace DP._20160113.Tests
 			});
 
 			// act
-			string offspring = offspringFactory.GetNewOffspring(g1);
+			string offspring = offspringFactory.GetNewChild(g1);
 
 			// assert
 			Assert.IsNotNull(offspring);

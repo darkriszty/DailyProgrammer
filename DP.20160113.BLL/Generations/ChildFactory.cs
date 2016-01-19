@@ -8,23 +8,23 @@ namespace DP._20160113.BLL.Generations
 	/// <summary>
 	/// Responsible to create new offsprings.
 	/// </summary>
-	public class OffspringFactory : IOffspringFactory
+	public class ChildFactory : IChildFactory
 	{
 		private readonly IStringRandomizer _stringRandomizer;
 		private readonly int _mutationCountPerGeneration;
 
-		public OffspringFactory(IStringRandomizer stringRandomizer, int mutationCountPerGeneration)
+		public ChildFactory(IStringRandomizer stringRandomizer, int mutationCountPerGeneration)
 		{
 			_stringRandomizer = stringRandomizer;
 			_mutationCountPerGeneration = mutationCountPerGeneration;
 		}
 
 		/// <summary>
-		/// Use the parents to generate a new offspring.
+		/// Use the parents to generate a new child.
 		/// </summary>
 		/// <param name="ancestor">The previous generation</param>
-		/// <returns>The new offspring</returns>
-		public string GetNewOffspring(Ancestor ancestor)
+		/// <returns>The new child</returns>
+		public string GetNewChild(Ancestor ancestor)
 		{
 			if (!ancestor.Parents.Any())
 			{

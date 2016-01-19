@@ -57,9 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="Controllers\EvolutionController.cs" />
     <Compile Include="Generations\Generation.cs" />
-    <Compile Include="Generations\IOffspringFactory.cs" />
-    <Compile Include="Generations\OffspringFactory.cs" />
+    <Compile Include="Generations\GenerationBuilder.cs" />
+    <Compile Include="Generations\IChildFactory.cs" />
+    <Compile Include="Generations\Offspring.cs" />
+    <Compile Include="Generations\ChildFactory.cs" />
     <Compile Include="Generations\Ancestor.cs" />
     <Compile Include="IoC\IocBootstrapper.cs" />
     <Compile Include="Strings\CharDistanceCalculator.cs" />

@@ -1,4 +1,5 @@
 ﻿using DP._20160113.BLL;
+using DP._20160113.BLL.Controllers;
 using DP._20160113.BLL.IoC;
 using DP._20160113.BLL.Strings;
 using Microsoft.Practices.Unity;
@@ -24,12 +25,8 @@ namespace DP._20160113.Console
 			container.RegisterServices(AppSettings.MutationCountPerGeneration);
 
 
-			IStringDistanceCalculator calculator = container.Resolve<IStringDistanceCalculator>();
-			IStringRandomizer randomizer = container.Resolve<IStringRandomizer>();
-
-			string randomizedInput = randomizer.GetRandomizedInput(INPUT);
-			System.Console.WriteLine("Random input: {0}", randomizedInput);
-			System.Console.WriteLine("Random input distance from original input: {0}", calculator.GetDistance(INPUT, randomizedInput));
+			EvolutionController controller = container.Resolve<EvolutionController>();
+			controller.StartEvolution(INPUT);
 		}
 	}
 }
