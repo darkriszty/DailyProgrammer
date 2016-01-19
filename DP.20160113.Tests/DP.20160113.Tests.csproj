@@ -70,7 +70,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DP.20160113.BLL\DP.20160113.BLL.csproj">
+      <Project>{F3ADE218-0B52-44A4-BDCC-CC852500786C}</Project>
+      <Name>DP.20160113.BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
