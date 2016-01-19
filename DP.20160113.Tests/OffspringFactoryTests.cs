@@ -18,7 +18,7 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IOffspringFactory>();
-			Generation g1 = new Generation();
+			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
 				"abcdef",
@@ -42,7 +42,7 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IOffspringFactory>();
-			Generation g1 = new Generation();
+			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
 				"abcde",
@@ -66,7 +66,7 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IOffspringFactory>();
-			Generation g1 = new Generation();
+			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
 				"qwer",
@@ -90,7 +90,7 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IOffspringFactory>();
-			Generation g1 = new Generation();
+			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
 				"a",
@@ -114,7 +114,7 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IOffspringFactory>();
-			Generation g1 = new Generation();
+			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
 				"abcdef",
@@ -139,7 +139,7 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IOffspringFactory>();
-			Generation g1 = new Generation();
+			Ancestor g1 = new Ancestor();
 			g1.Parents.AddRange(new List<string>
 			{
 				"abcde",

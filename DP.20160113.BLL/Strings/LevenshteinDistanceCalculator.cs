@@ -5,7 +5,7 @@ namespace DP._20160113.BLL.Strings
 	/// <summary>
 	/// Compute the distance between two strings.
 	/// </summary>
-	public class LevenshteinDistanceCalculator : ILevenshteinDistanceCalculator
+	public class LevenshteinDistanceCalculator : IStringDistanceCalculator
 	{
 		/// <summary>
 		/// Get the minimum number of single-character edits (i.e. insertions, deletions or substitutions) required to change one word into the other.

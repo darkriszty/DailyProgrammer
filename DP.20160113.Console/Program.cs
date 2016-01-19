@@ -24,7 +24,7 @@ namespace DP._20160113.Console
 			container.RegisterServices(AppSettings.MutationCountPerGeneration);
 
 
-			ILevenshteinDistanceCalculator calculator = container.Resolve<ILevenshteinDistanceCalculator>();
+			IStringDistanceCalculator calculator = container.Resolve<IStringDistanceCalculator>();
 			IStringRandomizer randomizer = container.Resolve<IStringRandomizer>();
 
 			System.Console.WriteLine("Random input: {0}", randomizer.GetRandomizedInput(INPUT));

@@ -22,27 +22,27 @@ namespace DP._20160113.BLL.Generations
 		/// <summary>
 		/// Use the parents to generate a new offspring.
 		/// </summary>
-		/// <param name="previousGeneration">The previous generation</param>
+		/// <param name="ancestor">The previous generation</param>
 		/// <returns>The new offspring</returns>
-		public string GetNewOffspring(Generation previousGeneration)
+		public string GetNewOffspring(Ancestor ancestor)
 		{
-			if (!previousGeneration.Parents.Any())
+			if (!ancestor.Parents.Any())
 			{
 				throw new ArgumentException("Parents must exist to create offsprings!");
 			}
 
-			int length = previousGeneration.Parents.First().Length;
-			if (previousGeneration.Parents.Any(parent => parent.Length != length))
+			int length = ancestor.Parents.First().Length;
+			if (ancestor.Parents.Any(parent => parent.Length != length))
 			{
 				throw new ArgumentException("Parents must be of the same length!");
 			}
 
 			// get the cut off point in the parents
 			StringBuilder sb = new StringBuilder();
-			int cutOffSize = length / previousGeneration.Parents.Count;
+			int cutOffSize = length / ancestor.Parents.Count;
 
 			int lastCutoffPoint = 0;
-			foreach (string parent in previousGeneration.Parents)
+			foreach (string parent in ancestor.Parents)
 			{
 				sb.Append(parent.Substring(lastCutoffPoint, cutOffSize));
 				lastCutoffPoint += cutOffSize;
@@ -53,7 +53,7 @@ namespace DP._20160113.BLL.Generations
 			if (missing > 0)
 			{
 				// if not then copy from the beginning of the last parent
-				string lastParent = previousGeneration.Parents.Last();
+				string lastParent = ancestor.Parents.Last();
 				sb.Append(lastParent.Substring(0, missing));
 			}
 

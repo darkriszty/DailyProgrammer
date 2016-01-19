@@ -11,7 +11,7 @@ namespace DP._20160113.BLL.IoC
 		/// </summary>
 		public static IUnityContainer RegisterServices(this IUnityContainer container, int mutationCountPerGeneration)
 		{
-			container.RegisterType<ILevenshteinDistanceCalculator, LevenshteinDistanceCalculator>();
+			container.RegisterType<IStringDistanceCalculator, LevenshteinDistanceCalculator>();
 			container.RegisterType<IStringRandomizer, StringRandomizer>(new ContainerControlledLifetimeManager());
 			container.RegisterType<IOffspringFactory, OffspringFactory>(
 				new InjectionConstructor(
