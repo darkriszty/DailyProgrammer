@@ -62,10 +62,10 @@
     <Compile Include="Generations\OffspringFactory.cs" />
     <Compile Include="Generations\Ancestor.cs" />
     <Compile Include="IoC\IocBootstrapper.cs" />
+    <Compile Include="Strings\CharDistanceCalculator.cs" />
     <Compile Include="Strings\IStringDistanceCalculator.cs" />
     <Compile Include="Strings\IStringRandomizer.cs" />
     <Compile Include="Strings\StringRandomizer.cs" />
-    <Compile Include="Strings\LevenshteinDistanceCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

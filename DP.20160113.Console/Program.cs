@@ -27,8 +27,9 @@ namespace DP._20160113.Console
 			IStringDistanceCalculator calculator = container.Resolve<IStringDistanceCalculator>();
 			IStringRandomizer randomizer = container.Resolve<IStringRandomizer>();
 
-			System.Console.WriteLine("Random input: {0}", randomizer.GetRandomizedInput(INPUT));
-			System.Console.WriteLine("Random input distance from original input: {0}", calculator.GetDistance(INPUT, "olleH, dlrow!"));
+			string randomizedInput = randomizer.GetRandomizedInput(INPUT);
+			System.Console.WriteLine("Random input: {0}", randomizedInput);
+			System.Console.WriteLine("Random input distance from original input: {0}", calculator.GetDistance(INPUT, randomizedInput));
 		}
 	}
 }
