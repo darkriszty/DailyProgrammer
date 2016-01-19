@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DP._20160113.BLL;
+using DP._20160113.BLL.IoC;
 using DP._20160113.BLL.Strings;
+using Microsoft.Practices.Unity;
 
 namespace DP._20160113.Console
 {
@@ -18,8 +20,12 @@ namespace DP._20160113.Console
 
 		static void Main(string[] args)
 		{
-			ILevenshteinDistanceCalculator calculator = new LevenshteinDistanceCalculator();
-			IStringRandomizer randomizer = new StringRandomizer();
+			IUnityContainer container = new UnityContainer();
+			container.RegisterServices(AppSettings.MutationCountPerGeneration);
+
+
+			ILevenshteinDistanceCalculator calculator = container.Resolve<ILevenshteinDistanceCalculator>();
+			IStringRandomizer randomizer = container.Resolve<IStringRandomizer>();
 
 			System.Console.WriteLine("Random input: {0}", randomizer.GetRandomizedInput(INPUT));
 			System.Console.WriteLine("Random input distance from original input: {0}", calculator.GetDistance(INPUT, "olleH, dlrow!"));
