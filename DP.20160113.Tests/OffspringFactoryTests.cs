@@ -18,20 +18,19 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IChildFactory>();
-			Ancestor g1 = new Ancestor();
-			g1.Parents.AddRange(new List<string>
-			{
-				"abcdef",
-				"ghijkl"
-			});
+			var individFactory = container.Resolve<IndividFactory>();
+
+			var parents = new List<Person>();
+			parents.Add(individFactory.CreateIndividual("abcdef", "123456"));
+			parents.Add(individFactory.CreateIndividual("ghijkl", "123456"));
 
 			// act
-			string offspring = offspringFactory.GetNewChild(g1);
+			string offspring = offspringFactory.GetNewChild(parents);
 
 			// assert
 			Assert.IsNotNull(offspring);
-			Assert.IsTrue(offspring.Length == g1.Parents[0].Length);
-			Assert.IsTrue(AreParents(offspring, g1.Parents, mutationCount), offspring);
+			Assert.IsTrue(offspring.Length == parents[0].Value.Length);
+			Assert.IsTrue(AreParents(offspring, parents, mutationCount), offspring);
 		}
 
 		[TestMethod]
@@ -42,20 +41,19 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IChildFactory>();
-			Ancestor g1 = new Ancestor();
-			g1.Parents.AddRange(new List<string>
-			{
-				"abcde",
-				"ghijk"
-			});
+			var individFactory = container.Resolve<IndividFactory>();
+
+			var parents = new List<Person>();
+			parents.Add(individFactory.CreateIndividual("abcde", "abcde"));
+			parents.Add(individFactory.CreateIndividual("ghijk", "ghijk"));
 
 			// act
-			string offspring = offspringFactory.GetNewChild(g1);
+			string offspring = offspringFactory.GetNewChild(parents);
 
 			// assert
 			Assert.IsNotNull(offspring);
-			Assert.IsTrue(offspring.Length == g1.Parents[0].Length);
-			Assert.IsTrue(AreParents(offspring, g1.Parents, mutationCount), offspring);
+			Assert.IsTrue(offspring.Length == parents[0].Value.Length);
+			Assert.IsTrue(AreParents(offspring, parents, mutationCount), offspring);
 		}
 
 		[TestMethod]
@@ -66,20 +64,19 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IChildFactory>();
-			Ancestor g1 = new Ancestor();
-			g1.Parents.AddRange(new List<string>
-			{
-				"qwer",
-				"asdf"
-			});
+			var individFactory = container.Resolve<IndividFactory>();
+
+			var parents = new List<Person>();
+			parents.Add(individFactory.CreateIndividual("qwer", "qwer"));
+			parents.Add(individFactory.CreateIndividual("asdf", "asdf"));
 
 			// act
-			string offspring = offspringFactory.GetNewChild(g1);
+			string offspring = offspringFactory.GetNewChild(parents);
 
 			// assert
 			Assert.IsNotNull(offspring);
-			Assert.IsTrue(offspring.Length == g1.Parents[0].Length);
-			Assert.IsTrue(AreParents(offspring, g1.Parents, mutationCount), offspring);
+			Assert.IsTrue(offspring.Length == parents[0].Value.Length);
+			Assert.IsTrue(AreParents(offspring, parents, mutationCount), offspring);
 		}
 
 		[TestMethod]
@@ -90,20 +87,19 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IChildFactory>();
-			Ancestor g1 = new Ancestor();
-			g1.Parents.AddRange(new List<string>
-			{
-				"a",
-				"b"
-			});
+			var individFactory = container.Resolve<IndividFactory>();
+
+			var parents = new List<Person>();
+			parents.Add(individFactory.CreateIndividual("a", "a"));
+			parents.Add(individFactory.CreateIndividual("b", "b"));
 
 			// act
-			string offspring = offspringFactory.GetNewChild(g1);
+			string offspring = offspringFactory.GetNewChild(parents);
 
 			// assert
 			Assert.IsNotNull(offspring);
-			Assert.IsTrue(offspring.Length == g1.Parents[0].Length);
-			Assert.IsTrue(AreParents(offspring, g1.Parents, mutationCount));
+			Assert.IsTrue(offspring.Length == parents[0].Value.Length);
+			Assert.IsTrue(AreParents(offspring, parents, mutationCount), offspring);
 		}
 
 		[TestMethod]
@@ -114,21 +110,21 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IChildFactory>();
-			Ancestor g1 = new Ancestor();
-			g1.Parents.AddRange(new List<string>
-			{
-				"abcdef",
-				"ghijkl",
-				"mnopqr"
-			});
+			var individFactory = container.Resolve<IndividFactory>();
+
+			var parents = new List<Person>();
+			parents.Add(individFactory.CreateIndividual("abcdef", "abcdef"));
+			parents.Add(individFactory.CreateIndividual("ghijkl", "ghijkl"));
+			parents.Add(individFactory.CreateIndividual("mnopqr", "mnopqr"));
+			
 
 			// act
-			string offspring = offspringFactory.GetNewChild(g1);
+			string offspring = offspringFactory.GetNewChild(parents);
 
 			// assert
 			Assert.IsNotNull(offspring);
-			Assert.IsTrue(offspring.Length == g1.Parents[0].Length);
-			Assert.IsTrue(AreParents(offspring, g1.Parents, mutationCount), offspring);
+			Assert.IsTrue(offspring.Length == parents[0].Value.Length);
+			Assert.IsTrue(AreParents(offspring, parents, mutationCount), offspring);
 		}
 
 		[TestMethod]
@@ -139,31 +135,31 @@ namespace DP._20160113.Tests
 			var container = new UnityContainer();
 			container.RegisterServices(mutationCount);
 			var offspringFactory = container.Resolve<IChildFactory>();
-			Ancestor g1 = new Ancestor();
-			g1.Parents.AddRange(new List<string>
-			{
-				"abcde",
-				"ghijk",
-				"mnopq"
-			});
+			var individFactory = container.Resolve<IndividFactory>();
+
+			var parents = new List<Person>();
+			parents.Add(individFactory.CreateIndividual("abcde", "abcde"));
+			parents.Add(individFactory.CreateIndividual("ghijk", "ghijk"));
+			parents.Add(individFactory.CreateIndividual("mnopq", "mnopq"));
+
 
 			// act
-			string offspring = offspringFactory.GetNewChild(g1);
+			string offspring = offspringFactory.GetNewChild(parents);
 
 			// assert
 			Assert.IsNotNull(offspring);
-			Assert.IsTrue(offspring.Length == g1.Parents[0].Length);
-			Assert.IsTrue(AreParents(offspring, g1.Parents, mutationCount), offspring);
+			Assert.IsTrue(offspring.Length == parents[0].Value.Length);
+			Assert.IsTrue(AreParents(offspring, parents, mutationCount), offspring);
 		}
 
-		private bool AreParents(string offspring, List<string> parents, int mutationCount)
+		private bool AreParents(string offspring, List<Person> parents, int mutationCount)
 		{
 			int foundMutationCount = 0;
 			char[] offspringChars = offspring.ToCharArray();
 
 			foreach (char c in offspringChars)
 			{
-				bool parentCharFound = parents.Any(p => p.Contains(c));
+				bool parentCharFound = parents.Any(p => p.Value.Contains(c));
 
 				if (!parentCharFound)
 					foundMutationCount++;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DP._20160113.BLL.Strings;
@@ -25,31 +26,30 @@ namespace DP._20160113.BLL.Generations
 		/// <summary>
 		/// Use the parents to generate a new child.
 		/// </summary>
-		/// <param name="ancestor">The previous generation</param>
+		/// <param name="ancestors">The previous generation</param>
 		/// <returns>The new child</returns>
-		public string GetNewChild(Ancestor ancestor)
+		public string GetNewChild(List<Person> ancestors)
 		{
-
-			if (!ancestor.Parents.Any())
+			if (!ancestors.Any())
 			{
 				throw new ArgumentException("Parents must exist to create offsprings!");
 			}
 
-			int length = ancestor.Parents.First().Length;
-			if (ancestor.Parents.Any(parent => parent.Length != length))
+			int length = ancestors.First().Value.Length;
+			if (ancestors.Any(parent => parent.Value.Length != length))
 			{
 				throw new ArgumentException("Parents must be of the same length!");
 			}
 
 			// get the cut off point in the parents
 			StringBuilder sb = new StringBuilder();
-			int cutOffSize = length / ancestor.Parents.Count;
+			int cutOffSize = _random.Next(length - 1);
 
 			int lastCutoffPoint = 0;
-			IOrderedEnumerable<string> randomizedParents = ancestor.Parents.OrderBy(p => _random.Next());
-			foreach (string parent in randomizedParents)
+			IOrderedEnumerable<Person> randomizedParents = ancestors.OrderBy(p =>_random.Next());
+			foreach (var parent in randomizedParents)
 			{
-				sb.Append(parent.Substring(lastCutoffPoint, cutOffSize));
+				sb.Append(parent.Value.Substring(lastCutoffPoint, Math.Min(cutOffSize, parent.Value.Length - lastCutoffPoint)));
 				lastCutoffPoint += cutOffSize;
 			}
 
@@ -58,7 +58,7 @@ namespace DP._20160113.BLL.Generations
 			if (missing > 0)
 			{
 				// if not then copy from the beginning of the last parent
-				string lastParent = randomizedParents.Last();
+				string lastParent = randomizedParents.Last().Value;
 				sb.Append(lastParent.Substring(0, missing));
 			}
 

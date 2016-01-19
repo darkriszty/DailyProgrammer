@@ -61,9 +61,9 @@
     <Compile Include="Generations\Generation.cs" />
     <Compile Include="Generations\GenerationBuilder.cs" />
     <Compile Include="Generations\IChildFactory.cs" />
-    <Compile Include="Generations\Offspring.cs" />
+    <Compile Include="Generations\IndividFactory.cs" />
+    <Compile Include="Generations\Person.cs" />
     <Compile Include="Generations\ChildFactory.cs" />
-    <Compile Include="Generations\Ancestor.cs" />
     <Compile Include="IoC\IocBootstrapper.cs" />
     <Compile Include="Strings\CharDistanceCalculator.cs" />
     <Compile Include="Strings\IStringDistanceCalculator.cs" />

@@ -12,12 +12,15 @@ namespace DP._20160113.BLL.Controllers
 	{
 		private readonly IStringRandomizer _randomizer;
 		private readonly GenerationBuilder _generationBuilder;
+		private readonly IndividFactory _individFactory;
 
 		public EvolutionController(IStringRandomizer randomizer,
-			GenerationBuilder generationBuilder)
+			GenerationBuilder generationBuilder,
+			IndividFactory individFactory)
 		{
 			_randomizer = randomizer;
 			_generationBuilder = generationBuilder;
+			_individFactory = individFactory;
 		}
 
 		/// <summary>
@@ -27,16 +30,15 @@ namespace DP._20160113.BLL.Controllers
 		public void StartEvolution(string input)
 		{
 			Console.WriteLine("Original input: {0}", input);
-			string parent1 = _randomizer.GetRandomizedInput(input);
-			string parent2 = _randomizer.GetRandomizedInput(input);
+			Person parent1 = _individFactory.CreateIndividual(_randomizer.GetRandomizedInput(input), input);
+			Person parent2 = _individFactory.CreateIndividual(_randomizer.GetRandomizedInput(input), input);
 			Console.WriteLine("First parent: {0}", parent1);
 			Console.WriteLine("Second parent: {0}", parent2);
 
 			// set up an initial generation
 			Generation initialGeneration = new Generation();
-			initialGeneration.Ancestors = new Ancestor();
-			initialGeneration.Ancestors.Parents.Add(parent1);
-			initialGeneration.Ancestors.Parents.Add(parent2);
+			initialGeneration.Ancestors.Add(parent1);
+			initialGeneration.Ancestors.Add(parent2);
 
 			// start the main loop
 			StartInner(initialGeneration, input);
@@ -56,7 +58,7 @@ namespace DP._20160113.BLL.Controllers
 			while (!finalGenerationFound)
 			{
 				lastGeneration = CreateBetterGeneration(lastGeneration, expectedOutput);
-				Console.WriteLine("Gen: {0} | Fitness: {1} | {2}", ++generationCount, lastGeneration.Offspring.Fitness, lastGeneration.Offspring.Child);
+				Console.WriteLine("Gen: {0} | Fitness: {1} | {2}", ++generationCount, lastGeneration.Offspring.Fitness, lastGeneration.Offspring.Value);
 				finalGenerationFound = lastGeneration.Offspring.Fitness == 0;
 			}
 			stopwatch.Stop();

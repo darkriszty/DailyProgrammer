@@ -21,37 +21,36 @@ namespace DP._20160113.BLL.Generations
 		public Generation BuildNewGeneration(Generation oldGeneration, string expectedResult)
 		{
 			Generation result = new Generation();
-			result.Ancestors = new Ancestor();
-			result.Offspring = new Offspring();
+			result.Offspring = new Person();
 
 			// find the best 2 ancestors to create a new generation (this includes the parents)
-			Dictionary <string, int> allPossibleAncestors = new Dictionary<string, int>();
+			var allPossibleAncestors = new List<Person>();
 
 			// include the ancestors of the last generation
-			foreach (string parent in oldGeneration.Ancestors.Parents)
+			foreach (Person parent in oldGeneration.Ancestors)
 			{
-				if (!allPossibleAncestors.ContainsKey(parent))
+				if (allPossibleAncestors.All(a => a.Value != parent.Value))
 				{
-					allPossibleAncestors[parent] = _stringDistanceCalculator.GetDistance(parent, expectedResult);
+					allPossibleAncestors.Add(parent);
 				}
 			}
 			// include the offspring of the last generation
-			if (!string.IsNullOrWhiteSpace(oldGeneration.Offspring?.Child))
+			if (!string.IsNullOrWhiteSpace(oldGeneration.Offspring?.Value))
 			{
-				if (!allPossibleAncestors.ContainsKey(oldGeneration.Offspring.Child))
+				if (allPossibleAncestors.All(a => a.Value != oldGeneration.Offspring.Value))
 				{
-					allPossibleAncestors[oldGeneration.Offspring.Child] = _stringDistanceCalculator.GetDistance(oldGeneration.Offspring.Child, expectedResult);
+					allPossibleAncestors.Add(oldGeneration.Offspring);
 				}
 			}
 
 			// order by fitness values in ascending order to take the best 2 ancestors, the rest are eliminated
-			var bestAncestors = allPossibleAncestors.OrderBy(d => d.Value).Take(2).ToArray();
-			result.Ancestors.Parents.Add(bestAncestors[0].Key);
-			result.Ancestors.Parents.Add(bestAncestors[1].Key);
+			Person[] bestAncestors = allPossibleAncestors.OrderBy(d => d.Fitness).Take(2).ToArray();
+			result.Ancestors.Add(bestAncestors[0]);
+			result.Ancestors.Add(bestAncestors[1]);
 
 			// create the child and evaluate its fitness
-			result.Offspring.Child = _childFactory.GetNewChild(result.Ancestors);
-			result.Offspring.Fitness = _stringDistanceCalculator.GetDistance(result.Offspring.Child, expectedResult);
+			result.Offspring.Value = _childFactory.GetNewChild(result.Ancestors);
+			result.Offspring.Fitness = _stringDistanceCalculator.GetDistance(result.Offspring.Value, expectedResult);
 
 			return result;
 		}
