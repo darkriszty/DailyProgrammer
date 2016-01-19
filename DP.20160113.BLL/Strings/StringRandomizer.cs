@@ -44,15 +44,15 @@ namespace DP._20160113.BLL.Strings
 		/// </summary>
 		public string RandomizeCharacter(string input, int charactersToRandomize)
 		{
-			char[] result = input.ToCharArray();
+			char[] characters = input.ToCharArray();
 			for (int i = 0; i < charactersToRandomize; i++)
 			{
 				int positionToRandomize = _random.Next(input.Length);
 				int nextCharIndex = _random.Next(ALLOWED_CHARACTERS.Length);
-				result[positionToRandomize] = ALLOWED_CHARACTERS[nextCharIndex];
+				characters[positionToRandomize] = ALLOWED_CHARACTERS[nextCharIndex];
 			}
 
-			return result.ToString();
+			return new string(characters);
 		}
 	}
 }
