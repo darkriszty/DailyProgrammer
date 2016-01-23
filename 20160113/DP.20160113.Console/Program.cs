@@ -1,7 +1,6 @@
 ﻿using DP._20160113.BLL;
 using DP._20160113.BLL.Controllers;
 using DP._20160113.BLL.IoC;
-using DP._20160113.BLL.Strings;
 using Microsoft.Practices.Unity;
 
 namespace DP._20160113.Console
@@ -17,7 +16,8 @@ namespace DP._20160113.Console
 		 * so you don't want to just cheat by printing out the input string!
 		 */
 
-		private const string INPUT = "Hello, world!";
+		private const string INPUT = "Knowledge speaks, but wisdom listens.";
+		// --  Jimi Hendrix
 
 		static void Main(string[] args)
 		{
