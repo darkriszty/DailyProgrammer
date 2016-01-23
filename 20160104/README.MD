@@ -1,7 +1,6 @@
 Let's build a basic paint program! Your task for today will be to create a basic paint program that can draw points, lines, and filled rectangles, then output an image file that many image viewers can read. But first, some background:
---------------------
-Netpbm Formats
---------------------
+
+##Netpbm Formats
 PNG, GIF, JPEG, and even BMP are all image formats that are way too complex for an [Easy] challenge. Instead, we are going to be using Netpbm formats. More specifically, we will be using the PPM format, which supports 24-bit RGB color. Here's how a .ppm file looks (courtesy of Wikipedia):
 
 P3
@@ -22,10 +21,7 @@ Lastly, note that in image processing, pixels are indexed using (row, column) co
 
 Now that that's out of the way, let's get to painting!
 
---------------------
-Formal Input
---------------------
-
+##Formal Input
 Your input file will contain an X/Y size for an image to create, followed by a series of commands, each on its own line. The commands each start with point, line, or rect, followed by a RGB color, followed by whatever arguments the command needs. Here's a sample:
 
 5 3
@@ -41,10 +37,8 @@ Breaking the file down line by line:
     rect: we're drawing a rectangle... 77 0 0: with this RGB color (dark red)... 1 3: with its top left coordinate here... 2 2 with its sides being 2 pixels tall and 2 pixels wide
 
 The "unpainted" background can be assumed to be black (0 0 0).
---------------------
-Formal Output
---------------------
 
+##Formal Output
 The output PPM file for the above example should look like this (more or less, spacing notwithstanding):
 
 P3
@@ -56,10 +50,7 @@ P3
 
 And it should render like this (zoomed in).
 
---------------------
-Challenge Input
---------------------
-
+##Challenge Input
 400 300
 rect 0 0 255 0 0 300 400
 line 255 255 255 0 0 299 399
@@ -67,10 +58,7 @@ line 255 255 255 299 0 0 399
 rect 200 200 0 100 150 100 100
 point 0 0 0 150 200
 
---------------------
-Challenge Output
---------------------
-
+##Challenge Output
 Actual output: https://raw.githubusercontent.com/fsufitch/dailyprogrammer/master/248_easy/sample2_tight.ppm
 
 Converted to PNG and posted to Imgur: https://i.imgur.com/nRmSoUf.png
