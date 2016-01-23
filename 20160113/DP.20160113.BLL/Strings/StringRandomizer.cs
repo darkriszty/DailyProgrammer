@@ -7,7 +7,7 @@ namespace DP._20160113.BLL.Strings
 	/// </summary>
 	public class StringRandomizer : IStringRandomizer
 	{
-		private const string ALLOWED_CHARACTERS = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`-=[]\;',./~!@#$%^&*()_+{}|:\""<>?";
+		private const string ALLOWED_CHARACTERS = @"abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789`-=[]\;',./~!@#$%^&*()_+{}|:\""<>?";
 		private readonly Random _random;
 
 		public StringRandomizer()
