@@ -35,7 +35,7 @@ namespace DP._20160113.BLL.Generations
 				}
 			}
 			// include the offspring of the last generation
-			if (!string.IsNullOrWhiteSpace(oldGeneration.Offspring?.Value))
+			if (oldGeneration.Offspring != null && !string.IsNullOrWhiteSpace(oldGeneration.Offspring.Value))
 			{
 				if (allPossibleAncestors.All(a => a.Value != oldGeneration.Offspring.Value))
 				{
