@@ -4,12 +4,11 @@ Let's build a basic paint program! Your task for today will be to create a basic
 PNG, GIF, JPEG, and even BMP are all image formats that are way too complex for an [Easy] challenge. Instead, we are going to be using Netpbm formats. More specifically, we will be using the PPM format, which supports 24-bit RGB color. Here's how a .ppm file looks (courtesy of Wikipedia):
 
 P3
-# The P3 means colors are in ASCII, then 3 columns and 2 rows,
-# then 255 for max color, then RGB triplets
 3 2
 255
 255   0   0     0 255   0     0   0 255
 255 255   0   255 255 255     0   0   0
+The P3 means colors are in ASCII, then 3 columns and 2 rows, then 255 for max color, then RGB triplets
 
 Each pixel in the image is represented with 3 integers (0-255) for its Red, Green, and Blue pixel values. The above .ppm file gets displayed as this (zoomed in).
 
