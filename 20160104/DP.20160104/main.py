@@ -1,8 +1,16 @@
-﻿def main():
+﻿import Shapes
+from Shapes import *
+
+def main():
     # read from input file
     lines = getFileContents()
     for line in lines:
         print(line)
+
+    # test abstract method
+    Point().draw()
+    Line().draw()
+    Rect().draw()
 
 def getFileContents():
     lines = []
