@@ -1,16 +1,22 @@
 ﻿import Shapes
+import ShapeFactory
 from Shapes import *
+from ShapeFactory import *
 
 def main():
+    factory = ShapeFactory()
+    shapes = []
+
     # read from input file
     lines = getFileContents()
     for line in lines:
-        print(line)
+        newShape = factory.createShape(line)
+        if newShape is not None:
+            shapes.append(newShape)
 
-    # test abstract method
-    Point().draw()
-    Line().draw()
-    Rect().draw()
+    for shape in shapes:
+        shape.draw()
+
 
 def getFileContents():
     lines = []
