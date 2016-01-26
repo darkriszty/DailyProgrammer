@@ -9,13 +9,18 @@ def main():
 
     # read from input file
     lines = getFileContents()
+
+    board = factory.createBoard(lines[0])
+
     for line in lines:
         newShape = factory.createShape(line)
         if newShape is not None:
             shapes.append(newShape)
 
     for shape in shapes:
-        shape.draw()
+        shape.draw(board)
+
+    board.showBoard()
 
 
 def getFileContents():

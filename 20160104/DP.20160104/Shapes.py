@@ -7,7 +7,7 @@ class RgbColor(object):
     b = 0
 
     def toString(self):
-        return "RGB({0}, {1}, {2})".format(self.r, self.g, self.b)
+        return "{0} {1} {2}".format(self.r, self.g, self.b)
 
 class Shape(metaclass=ABCMeta):
     """represents a base class for other shapes that have a color"""
@@ -15,7 +15,7 @@ class Shape(metaclass=ABCMeta):
     color = RgbColor()
 
     @abstractmethod
-    def draw(self):
+    def draw(self, board):
         pass
 
 class Point2D(object):
@@ -31,8 +31,8 @@ class Point(Shape):
 
     pos = Point2D()
 
-    def draw(self):
-        print("drawing point of color {0} at {1}".format(self.color.toString(), self.pos.toString()))
+    def draw(self, board):
+        board.drawPixel(self.color, self.pos)
 
 class Line(Shape):
     """represents a line"""
@@ -40,8 +40,10 @@ class Line(Shape):
     p1 = Point2D()
     p2 = Point2D()
 
-    def draw(self):
-        print("drawing line of color {0} at {1} -> {2}".format(self.color.toString(), self.p1.toString(), self.p2.toString()))
+    def draw(self, board):
+        #TODO: draw actual line
+        board.drawPixel(self.color, self.p1)
+        board.drawPixel(self.color, self.p2)
 
 class Rect(Shape):
     """represents a rectangle"""
@@ -66,5 +68,34 @@ class Rect(Shape):
        self._p4.x = self._p3.x;
        self._p4.y = self._p1.y;
 
-    def draw(self):
-        print("drawing rectangle of color {0} to {1} -> {2} -> {3} -> {4}".format(self.color.toString(), self._p1.toString(), self._p2.toString(), self._p3.toString(), self._p4.toString()))
+    def draw(self, board):
+        #TODO: draw actual rectangle
+        board.drawPixel(self.color, self._p1)
+        board.drawPixel(self.color, self._p2)
+        board.drawPixel(self.color, self._p3)
+        board.drawPixel(self.color, self._p4)
+
+class Board(object):
+    """represents a board that can be used for drawing"""
+
+    _width = 0
+    _height = 0
+    _pixels = []
+
+    def __init__(self, width, height):
+        self._width = width
+        self._height = height
+        for i in range(0, width):
+            new = []
+            for j in range(0, height):
+                new.append(RgbColor())
+            self._pixels.append(new)
+
+    def drawPixel(self, color, pos):
+        self._pixels[pos.x][pos.y] = color
+
+    def showBoard(self):
+        for i in range(0, self._width):
+            for j in range(0, self._height):
+                print(self._pixels[i][j].toString());
+            print("");

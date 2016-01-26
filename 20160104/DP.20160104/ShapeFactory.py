@@ -8,6 +8,10 @@ class ShapeFactory(object):
     _line = "line"
     _rect = "rect"
 
+    def createBoard(self, boardLine):
+        pieces = boardLine.split(" ")
+        return Board(int(pieces[0]), int(pieces[1]))
+
     def createShape(self, definition):
         pieces = definition.split(" ")
 
@@ -48,6 +52,6 @@ class ShapeFactory(object):
 
     def _getPoint(self, pointPieces, index):
         result = Point2D()
-        result.x = pointPieces[index]
-        result.y = pointPieces[index + 1]
+        result.x = int(pointPieces[index])
+        result.y = int(pointPieces[index + 1])
         return result
