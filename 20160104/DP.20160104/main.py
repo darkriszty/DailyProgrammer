@@ -27,6 +27,9 @@ def getFileContents():
     lines = []
     f = open("input.txt", "r")
     for line in f :
+        l = line.strip()
+        if l.startswith("#"):
+            continue
         lines.append(line.rstrip("\n"))
     f.close()
 
