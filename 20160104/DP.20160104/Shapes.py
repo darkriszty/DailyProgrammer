@@ -103,11 +103,11 @@ class Rect(Shape):
     def _updateLines(self):
         # top line
         self._lines[0].p1 = Point2D(self._topLeft.x, self._topLeft.y)
-        self._lines[0].p2 = Point2D(self._lines[0].p1.x + self._widthAndHeight.x, self._lines[0].p1.y)
+        self._lines[0].p2 = Point2D(self._lines[0].p1.x + self._widthAndHeight.x - 1, self._lines[0].p1.y)
 
         # right side line
         self._lines[1].p1 = Point2D(self._lines[0].p2.x, self._lines[0].p2.y)
-        self._lines[1].p2 = Point2D(self._lines[1].p1.x, self._lines[1].p1.y + self._widthAndHeight.y)
+        self._lines[1].p2 = Point2D(self._lines[1].p1.x, self._lines[1].p1.y + self._widthAndHeight.y - 1)
 
         # bottom line
         self._lines[2].p1 = Point2D(self._lines[1].p2.x, self._lines[1].p2.y)
@@ -127,6 +127,7 @@ class Board(object):
     _width = 0
     _height = 0
     _pixels = []
+    _maxColor = 0
 
     def __init__(self, width, height):
         self._width = width
@@ -138,11 +139,15 @@ class Board(object):
             self._pixels.append(new)
 
     def drawPixel(self, color, pos):
-        print("drawing into ({0},{1})".format(pos.y, pos.x))
+        if color.r > self._maxColor: self._maxColor = color.r
+        if color.g > self._maxColor: self._maxColor = color.g
+        if color.b > self._maxColor: self._maxColor = color.b
         self._pixels[pos.y][pos.x] = color
 
     def showBoard(self):
-        for i in range(0, self._width):
-            for j in range(0, self._height):
-                print(self._pixels[i][j].toString());
-            print("");
+        result = "P3\n{0} {1}\n{2}\n".format(self._width, self._height, self._maxColor)
+        for i in range(0, self._height):
+            for j in range(0, self._width):
+                result += self._pixels[j][i].toString() + "\t"
+            result += "\n"
+        return result

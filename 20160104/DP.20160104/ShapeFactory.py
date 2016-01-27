@@ -45,9 +45,9 @@ class ShapeFactory(object):
 
     def _getColor(self, pointPieces):
         result = RgbColor()
-        result.r = pointPieces[1]
-        result.g = pointPieces[2]
-        result.b = pointPieces[3]
+        result.r = int(pointPieces[1])
+        result.g = int(pointPieces[2])
+        result.b = int(pointPieces[3])
         return result
 
     def _getPoint(self, pointPieces, index):

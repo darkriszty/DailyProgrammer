@@ -10,17 +10,27 @@ def main():
     # read from input file
     lines = getFileContents()
 
+    # create the board that is used for drawing
     board = factory.createBoard(lines[0])
 
+    # create the shapes from the file
     for line in lines:
         newShape = factory.createShape(line)
         if newShape is not None:
             shapes.append(newShape)
 
+    # draw each shape on the board
     for shape in shapes:
         shape.draw(board)
 
-    board.showBoard()
+    # get the painted result from the board
+    result = board.showBoard()
+    print(result)
+
+    # write the results into an output file
+    f = open("output.txt", "w")
+    f.write(result)
+    f.close()
 
 
 def getFileContents():
