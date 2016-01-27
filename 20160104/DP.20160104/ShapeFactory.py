@@ -25,22 +25,22 @@ class ShapeFactory(object):
 
     def _createPoint(self, pointPieces):
         result = Point()
-        result.color = self._getColor(pointPieces)
-        result.pos = self._getPoint(pointPieces, 4);
+        result.setColor(self._getColor(pointPieces))
+        result.pos = self._getPoint(pointPieces, 4)
         return result
 
     def _createLine(self, pointPieces):
         result = Line()
-        result.color = self._getColor(pointPieces)
+        result.setColor(self._getColor(pointPieces))
         result.p1 = self._getPoint(pointPieces, 4)
         result.p2 = self._getPoint(pointPieces, 6)
         return result
 
     def _createRect(self, pointPieces):
         result = Rect()
-        result.color = self._getColor(pointPieces)
+        result.setColor(self._getColor(pointPieces))
         result.setTopLeft(self._getPoint(pointPieces, 4))
-        result.setBottomRight(self._getPoint(pointPieces, 6))
+        result.setWidthAndHeight(self._getPoint(pointPieces, 6))
         return result
 
     def _getColor(self, pointPieces):

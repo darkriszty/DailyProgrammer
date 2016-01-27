@@ -12,16 +12,30 @@ class RgbColor(object):
 class Shape(metaclass=ABCMeta):
     """represents a base class for other shapes that have a color"""
 
-    color = RgbColor()
+    _color = RgbColor()
+
+    def setColor(self, color):
+        self._color = color
+
+    def getColor(self):
+        return self._color
 
     @abstractmethod
     def draw(self, board):
+        pass
+
+    @abstractmethod
+    def _colorUpdated(self):
         pass
 
 class Point2D(object):
     """represents a point in 2D"""
     x = 0
     y = 0
+
+    def __init__(self, x = 0, y = 0):
+        self.x = x
+        self.y = y
 
     def toString(self):
         return "({0}, {1})".format(self.x, self.y)
@@ -32,7 +46,10 @@ class Point(Shape):
     pos = Point2D()
 
     def draw(self, board):
-        board.drawPixel(self.color, self.pos)
+        board.drawPixel(self.getColor(), self.pos)
+
+    def _colorUpdated(self):
+        pass
 
 class Line(Shape):
     """represents a line"""
@@ -42,38 +59,52 @@ class Line(Shape):
 
     def draw(self, board):
         #TODO: draw actual line
-        board.drawPixel(self.color, self.p1)
-        board.drawPixel(self.color, self.p2)
+        board.drawPixel(self.getColor(), self.p1)
+        board.drawPixel(self.getColor(), self.p2)
+
+    def _colorUpdated(self):
+        pass
 
 class Rect(Shape):
     """represents a rectangle"""
 
-    # from top left clockwise to bottom left
-    _p1 = Point2D()
-    _p2 = Point2D()
-    _p3 = Point2D()
-    _p4 = Point2D()
+    _topLeft = Point2D()
+    _widthAndHeight = Point2D()
+    # from top clockwise to left
+    _lines = [ Line(), Line(), Line(), Line() ]
 
-    def setTopLeft(self, pos):
-        self._p1 = pos
-        self._updatePoints()
+    def setTopLeft(self, topLeft):
+        self._topLeft = topLeft
+        self._updateLines()
 
-    def setBottomRight(self, pos):
-        self._p3 = pos
-        self._updatePoints()
+    def setWidthAndHeight(self, widthAndHeight):
+        self._widthAndHeight = widthAndHeight
+        self._updateLines()
 
-    def _updatePoints(self):
-       self._p2.x = self._p1.x;
-       self._p2.y = self._p3.y;
-       self._p4.x = self._p3.x;
-       self._p4.y = self._p1.y;
+    def _colorUpdated(self):
+        for line in self._lines:
+            line.setColor(self.getColor())
+
+    def _updateLines(self):
+        # top line
+        self._lines[0].p1 = Point2D(self._topLeft.x, self._topLeft.y)
+        self._lines[0].p2 = Point2D(self._lines[0].p1.x + self._widthAndHeight.x, self._lines[0].p1.y)
+
+        # right side line
+        self._lines[1].p1 = Point2D(self._lines[0].p2.x, self._lines[0].p2.y)
+        self._lines[1].p2 = Point2D(self._lines[1].p1.x, self._lines[1].p1.y + self._widthAndHeight.y)
+
+        # bottom line
+        self._lines[2].p1 = Point2D(self._lines[1].p2.x, self._lines[1].p2.y)
+        self._lines[2].p2 = Point2D(self._lines[0].p1.x, self._lines[2].p1.y)
+
+        # left side line
+        self._lines[3].p1 = Point2D(self._lines[2].p2.x, self._lines[2].p2.y)
+        self._lines[3].p2 = Point2D(self._lines[0].p1.x, self._lines[0].p1.y)
 
     def draw(self, board):
-        #TODO: draw actual rectangle
-        board.drawPixel(self.color, self._p1)
-        board.drawPixel(self.color, self._p2)
-        board.drawPixel(self.color, self._p3)
-        board.drawPixel(self.color, self._p4)
+        for line in self._lines:
+            line.draw(board)
 
 class Board(object):
     """represents a board that can be used for drawing"""
