@@ -121,6 +121,15 @@ class Rect(Shape):
         for line in self._lines:
             line.draw(board)
 
+        # fill the rectangle
+        x = self._lines[0].p1.x
+        while x <= self._lines[1].p1.x:
+            y = self._lines[0].p1.y
+            while y <= self._lines[1].p2.y:
+                board.drawPixel(self.getColor(), Point2D(x, y))
+                y += 1
+            x += 1
+
 class Board(object):
     """represents a board that can be used for drawing"""
 

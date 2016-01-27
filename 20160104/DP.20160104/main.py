@@ -23,11 +23,8 @@ def main():
     for shape in shapes:
         shape.draw(board)
 
-    # get the painted result from the board
+    # get the painted result from the board and write the it into an output file
     result = board.showBoard()
-    print(result)
-
-    # write the results into an output file
     f = open("output.txt", "w")
     f.write(result)
     f.close()
