@@ -16,6 +16,7 @@ class Shape(metaclass=ABCMeta):
 
     def setColor(self, color):
         self._color = color
+        self._colorUpdated()
 
     def getColor(self):
         return self._color
@@ -58,9 +59,23 @@ class Line(Shape):
     p2 = Point2D()
 
     def draw(self, board):
-        #TODO: draw actual line
+        # Bresenham algorithm
+        dx = self.p2.x-self.p1.x
+        dy = self.p2.y-self.p1.y
+        D = 2*dy - dx
         board.drawPixel(self.getColor(), self.p1)
-        board.drawPixel(self.getColor(), self.p2)
+        y = self.p1.y
+        if D > 0:
+            y = y+1
+            D = D - (2*dx)
+        x = self.p1.x + 1
+        while x < self.p2.x:
+            board.drawPixel(self.getColor(), Point2D(x, y))
+            D = D + (2*dy)
+            if D > 0:
+                y = y+1
+                D = D - (2*dx)
+            x += 1
 
     def _colorUpdated(self):
         pass
@@ -123,7 +138,8 @@ class Board(object):
             self._pixels.append(new)
 
     def drawPixel(self, color, pos):
-        self._pixels[pos.x][pos.y] = color
+        print("drawing into ({0},{1})".format(pos.y, pos.x))
+        self._pixels[pos.y][pos.x] = color
 
     def showBoard(self):
         for i in range(0, self._width):
