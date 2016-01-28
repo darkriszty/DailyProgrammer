@@ -1,0 +1,148 @@
+﻿Original input: Knowledge speaks, but wisdom listens.
+First parent: `^S=7B8k+&A|[Fu;PdB\'hVf\LE47li|^&mej (Fit: 1172)
+Second parent: K@FpxV9Z&[&yk:ZWNR3FN<v"eT!.Hj^uq7fw\ (Fit: 1124)
+Gen: 1 | Fitness: 1257 | `^S=7B8k+&A|[Fu;PdB\'hV"eT!.HT^uq7fw\
+Gen: 2 | Fitness: 1101 | `^S=7B8k+&A|[Fu;PdB\'&VfeT!.Hj^uq7fw\
+Gen: 3 | Fitness: 1051 | `^S=7B8k+&A|[Fu;PdB\'&VfeTS.Hj^uq7fw\
+Gen: 4 | Fitness: 1018 | `^S=7BYk+&A|[Fu;PdB\'&VfeTS.Hj^uq7fw\
+Gen: 5 | Fitness: 1010 | `^S=`B8k+&A|[Fu;PdB\'&VfeTS.Hj^uq7fw\
+Gen: 6 | Fitness: 965 | `^S=7BYk`&A|[Fu;PdB\'&VfeTS.Hj^uq7fw\
+Gen: 7 | Fitness: 948 | `^S=7wYk`&A|[Fu;PdB\'&VfeTS.Hj^uq7fw\
+Gen: 8 | Fitness: 936 | `^Sd7BYk`&A|[Fu;PdB\'&VfeTS.Hj^u`^S=7
+Gen: 9 | Fitness: 866 | `^Sd7BYk`&A|[Fu;P(B\'&VfeTS.Hj^uq7fw\
+Gen: 10 | Fitness: 854 | `^Sd7BYk`&A|[Fu;P(B\'&VfeTq.Hj^uq7`^S
+Gen: 11 | Fitness: 836 | `^Sd7BYk`&A|_Fu;P(B\'&VfeTq.Hj^uq7fw\
+Gen: 12 | Fitness: 819 | `^Sd7BYk`&A|[Fu;P(B\'&VfeTq.Hj^uq~fw\
+Gen: 13 | Fitness: 812 | `^Sd7BYk`&A|[Fu;P(Bc'&VfeTq.Hj^uq~fw\
+Gen: 14 | Fitness: 784 | `^Sd7^Yk`&A|[Fu;P(Bc'&VfeTq.Hj^uq~fw\
+Gen: 15 | Fitness: 765 | `^SdfBYk`&A|[Fu;P(Bc'&VfeTq.Hj^uq~fw\
+Gen: 16 | Fitness: 719 | `^SdfBYk`&A|[Fu;P(Bc'&VfeTq~Hj^uq~fw\
+Gen: 17 | Fitness: 700 | `^SdfBYk`&A|[Fu;P(Bc'&VfeTq~Hj^uqkfw\
+Gen: 18 | Fitness: 699 | `^SdfBYk`&A|[Fu;P(Bc(&VfeTq~Hj^uqkfw\
+Gen: 19 | Fitness: 694 | `^SdfBYk`&A|[Ku;P(Bc(&VfeTq~Hj^uqkfw\
+Gen: 20 | Fitness: 692 | `^SdfBYk`&A|[Ku;P(Bc(&VfeTq~Hj^uskfw\
+Gen: 21 | Fitness: 685 | `^SdfBYk`&A|[Ku;P(Bc(&VfzTq~Hj^uskfw\
+Gen: 22 | Fitness: 675 | `^SdfBYk`&A|[Ku;P(Bc(&VfzTq~Hjhuskfw\
+Gen: 23 | Fitness: 641 | `^SdfBYk`&A|[KugP(Bc(&VfzTq~Hj^uskfw\
+Gen: 24 | Fitness: 635 | `^SdfBYk`&A|[KugP(Bc(&Vf~Tq~Hjhuskfw\
+Gen: 25 | Fitness: 570 | `^SdfBYk`&A|[KugP(Bcu&Vf~Tq~Hj^uskfw\
+Gen: 26 | Fitness: 568 | `^SdfBYk`&A|[KugP(Bcu&Vt~Tq~Hjhuskfw\
+Gen: 27 | Fitness: 549 | `^SdfBYk`&A|[KugP(Bcu&it~Tq~Hjhuskfw\
+Gen: 28 | Fitness: 534 | `^SdfBYk`&A|[KugP(Bxu&it~Tq~Hjhuskfw\
+Gen: 29 | Fitness: 531 | `^SdfBYk`&A|[Kug>(Bcu&it~Tq~Hjhuskfw\
+Gen: 30 | Fitness: 530 | :^SdfBYk`&A|[KugP(Bxu&it~Tq~Hjhuskfw\
+Gen: 31 | Fitness: 505 | :^SdfBYk`&A|[KugP([xu&it~Tq~Hjhuskfw\
+Gen: 32 | Fitness: 480 | :^SdfBYk`&A|[KugP([xu&it~Tq~Hjhhskfw:
+Gen: 33 | Fitness: 473 | :^SdfBYk`&A|[KugP([xu&it~Tq~Hjhwskfw:
+Gen: 34 | Fitness: 463 | :^SdfBYk`&A|[KugP([xu&ih~Tq~Hjhwskfw:
+Gen: 35 | Fitness: 460 | :^SdfBYk`&A|[KdgP([xu&ih~Tq~Hjhwskfw:
+Gen: 36 | Fitness: 446 | :^SdfBYk`&A|[KdgP([xu&ih~TqjHjhwskfw:
+Gen: 37 | Fitness: 438 | :^SdfrYk`&A|[KdgP([xu&ih~Tq~Hjhwskfw:
+Gen: 38 | Fitness: 411 | G^SdfrYk`&A|[KdgP([xu&ih~TqjHjhwskfw:
+Gen: 39 | Fitness: 410 | GoSdfrYk`&A|[KdgP([xu&ih~Tq~Hjhwskfw:
+Gen: 40 | Fitness: 396 | GoSdfrYk`&A|[KdgP([xu&ih~TqjHjhwskfw:
+Gen: 41 | Fitness: 360 | GoSdfrYk`&A|[Kdg,([xu&ih~TqjHjhwskfw:
+Gen: 42 | Fitness: 350 | GoSdfrYk`&A|[Kdg,([xu&ihtTqjHjhwskfw:
+Gen: 43 | Fitness: 341 | GofdfrYk`&A|[Kdg,([xu&ih~TqjHjhwskfw:
+Gen: 44 | Fitness: 331 | GofdfrYk`&A|[Kdg,([xs&ihtTqjHjhwskfw:
+Gen: 45 | Fitness: 321 | GofdfrYk`&A|[Kdg,([xu&ih~Tqj4jhwskfw:
+Gen: 46 | Fitness: 319 | GofdfrYk`&A|[Kdg,([xs&ihtTqj4jhw}kfw:
+Gen: 47 | Fitness: 303 | GondfrYk`&A|[Kdg,([xs&ihtTqj4jhwskfw:
+Gen: 48 | Fitness: 296 | GondfrYk`&A|[hdg,([xs&ihtTqj4jhw}kfw:
+Gen: 49 | Fitness: 280 | GondfrYk`&A|[hdg,([xs&qhtTqj4jhwskfw:
+Gen: 50 | Fitness: 279 | GondfiYk`&A|[hdg,([xs&ihtTqj4jhwskfw:
+Gen: 51 | Fitness: 271 | GondfiYk`&A|[hdg,([xs&qhtTqj4jhwskfw:
+Gen: 52 | Fitness: 256 | GondfiYk`&A|[hdg,([xs&qhtcqj4jhwskfw:
+Gen: 53 | Fitness: 254 | GondfgYk`&A|[hdg,([xs&qhtcqj4jhwskfw:
+Gen: 54 | Fitness: 248 | GondfgYk`&A|[hdg,(cxs&qhtcqj4jhwskfw:
+Gen: 55 | Fitness: 206 | GondfgYk`&k|[hdg,(cxs&qhtcqj4jhwskfw:
+Gen: 56 | Fitness: 204 | GondfgYk`&y|[hdg,(cxs&qhtcqj4jhwskfw:
+Gen: 57 | Fitness: 196 | GondfgYk`&yt[hdg,(cxs&qhtcqj4jhwskfw:
+Gen: 58 | Fitness: 191 | GondfgYk`&yt[hdg,(cxs!qhtcqj4jhwskfw:
+Gen: 59 | Fitness: 188 | GondfgYk`&yt[hdg,(cxs!qhtcqj4jhwsbfw:
+Gen: 60 | Fitness: 182 | GondfgYk`&yt[hdg,(cxs!qhtcqj4jhwsbfw(
+Gen: 61 | Fitness: 181 | GondfgYk`&nt[hdg,(cxs!qhtcqj4jhwsbfw(
+Gen: 62 | Fitness: 180 | GondfgYk`&nt[hdg,(cxs!qhtcqj4jiwsbfw(
+Gen: 63 | Fitness: 177 | GondfgYk`&nt[hdg,(cxs!qhtcqj4jhwsbjw(
+Gen: 64 | Fitness: 176 | GondfgYk`&nt[hdg,(cxs!qhtcnj4jhwsbjw(
+Gen: 65 | Fitness: 169 | GonlfgYk`&nt[hdg,(cxs!qhtcqj4jhwsbjw(
+Gen: 66 | Fitness: 167 | GonlfgYk`&nt[hdg,(cxs!qhtcnj3jhwsbjw(
+Gen: 67 | Fitness: 166 | GonlfgYk`&nt[hdg,(cxs!qhtcqj4jhwsbjt(
+Gen: 68 | Fitness: 159 | GonlfgYk` nt[hdg,(cxs!qhtcnj4jhwsbjt(
+Gen: 69 | Fitness: 157 | GonlfgYk` pt[hdg,(cxs!qhtcnj4jhwsbjt(
+Gen: 70 | Fitness: 156 | GonlfgYk` nt[hdg,(cxs!qhtcnj4jhwsbjt+
+Gen: 71 | Fitness: 146 | GonlfgYk` ptghdg,(cxs!qhtcnj4jhwsbjt+
+Gen: 72 | Fitness: 145 | GonlfgYk` ptggdg,(cxs!qhtcnj4jhwsbjt+
+Gen: 73 | Fitness: 143 | GonlfgYk` pnggdg,(cxs!qhtcnj4jhwsbjt+
+Gen: 74 | Fitness: 141 | GonlfgYk` pngedg,(cxs!qhtcnj4jhwsbjt+
+Gen: 75 | Fitness: 135 | Gonlfggk` pnggdg,(cxs!qhtcnj4jhwsbjt+
+Gen: 76 | Fitness: 129 | Gonlfggk` pnggdy,(cxs!qhtcnj4jhwsbjt+
+Gen: 77 | Fitness: 128 | Gonlfggk` pnfgdy,(cxs!qhtcnj4jhwsbjt+
+Gen: 78 | Fitness: 125 | Gon~fggk` pnggdy,(cxs!qhtcnj4jhwsbjt+
+Gen: 79 | Fitness: 105 | Gon~fggk` pnggdy,(cxs!qhtcnj jhwsbjt+
+Gen: 80 | Fitness: 101 | Gonzfggk` pnggdy,(cxs!qhtcnj jhwsbjt+
+Gen: 81 | Fitness: 95 | Gonzfggk` pnggds,(cxs!qhtcnj jhwsbjt+
+Gen: 82 | Fitness: 87 | Gonzfggk` pnggds, cxs!qhtcnj jhwsbjt+
+Gen: 83 | Fitness: 83 | Gonzfggk` png_ds, cxs!qhtcnj jhwsbjt+
+Gen: 84 | Fitness: 80 | Gonziggk` png_ds, cxs!qhtcnj jhwsbjt+
+Gen: 85 | Fitness: 79 | Gonzfggk` png_ds, cxs!yhtcnj jhwsbjt+
+Gen: 86 | Fitness: 78 | Gonziggk` png_ds, cxs!qhtcnj jhusbjt+
+Gen: 87 | Fitness: 77 | Gonziggk` png_ds, cxs!qhtcnj jhusbjt,
+Gen: 88 | Fitness: 74 | Gonziggk` png_ns, cxs!qhtcnj jhusbjt+
+Gen: 89 | Fitness: 73 | Gonziggk` png_ns, cxs!qhtcnj jhusbjt,
+Gen: 90 | Fitness: 71 | Gonxiggk` png_ns, cxs!qhtcnj jhusbjt,
+Gen: 91 | Fitness: 70 | Gonziggk` png_ks, cxs!qhtcnj jhusbjt,
+Gen: 92 | Fitness: 66 | Gonxiggk` png_ns, cxs!xhtcnj jhusbjt,
+Gen: 93 | Fitness: 65 | Gonziggk` png_ks, cxs!xhtcnj jhusbjt,
+Gen: 94 | Fitness: 64 | Gonxiggk` tng_ns, cxs!xhtcnj jhusbjt,
+Gen: 95 | Fitness: 62 | Gonziggf` png_ks, cxs!xhtcnj jhusbjt,
+Gen: 96 | Fitness: 59 | Gonziggf` png_ks, cus!xhtcnj jhusbjt,
+Gen: 97 | Fitness: 58 | Gonziggfa png_ks, cus!xhtcnj jhusbjt,
+Gen: 98 | Fitness: 57 | Gonziggfa png_ks, cus!xhscnj jhusbjt,
+Gen: 99 | Fitness: 56 | Gonyiggfa png_ks, cus!xhscnj jhusbjt,
+Gen: 100 | Fitness: 54 | Gonyiggfg png_ks, cus!xhscnj jhusbjt,
+Gen: 101 | Fitness: 50 | Gonyiggfg png_ks, cus!xhscnj jhusbnt,
+Gen: 102 | Fitness: 49 | Nonyiggfg png_ks, cus!xhscnj jhusbnt,
+Gen: 103 | Fitness: 47 | Nonyiegfg png_ks, cus!xhscnj jhusbnt,
+Gen: 104 | Fitness: 46 | Nonyiegfg png_ks, cus!xhscnj jhusbnt-
+Gen: 105 | Fitness: 44 | Nonyiegfe png_ks, cus!xhscnj jhusbnt-
+Gen: 106 | Fitness: 43 | Nonyiegfe png_ks, cus!xhscnj jhusgnt-
+Gen: 107 | Fitness: 42 | Nonyjegfe png_ks, cus!xhscnj jhusgnt-
+Gen: 108 | Fitness: 39 | Nonyjegfe sng_ks, cus!xhscnj jhusgnt-
+Gen: 109 | Fitness: 37 | Nonylegfe sng_ks, cus!xhscnj jhusgnt-
+Gen: 110 | Fitness: 36 | Monylegfe sng_ks, cus!xhscnj jhusgnt-
+Gen: 111 | Fitness: 35 | Monylegfe sngbks, cus!xhscnj jhusgnt-
+Gen: 112 | Fitness: 33 | Monylegfe sngbks, cus!xhscnl jhusgnt-
+Gen: 113 | Fitness: 32 | Monylegfe sngbks, cus!xhscnl jhusfnt-
+Gen: 114 | Fitness: 31 | Monylegfe sngbks, cus!xhscnm jhusfnt-
+Gen: 115 | Fitness: 30 | Monyleefe sngbks, cus!xhscnl jhusfnt-
+Gen: 116 | Fitness: 29 | Monylecfe sngbks, cus!xhscnm jhusfnt-
+Gen: 117 | Fitness: 28 | Monyleefe sngbks, cus!xhscnm khusfnt-
+Gen: 118 | Fitness: 27 | Monyledfe sngbks, cus!xhscnm khusfnt-
+Gen: 119 | Fitness: 26 | Monyledge sngbks, cus!xhscnm khusfnt-
+Gen: 120 | Fitness: 25 | Monvledge sngbks, cus!xhscnm khusfnt-
+Gen: 121 | Fitness: 24 | Monvledge sngbks, cus!xhscnm khusent-
+Gen: 122 | Fitness: 23 | Monvledge sngbks, cus!xhscnm khusens-
+Gen: 123 | Fitness: 21 | Konvledge sngbks, cus!xhscnm khusens-
+Gen: 124 | Fitness: 20 | Konvledge sngbks, cus!xhsdnm khusens-
+Gen: 125 | Fitness: 19 | Konwledge sngbks, cus!xhsdnm khusens-
+Gen: 126 | Fitness: 17 | Konwledge spgbks, cus!xhsdnm khusens-
+Gen: 127 | Fitness: 16 | Konwledge spgbks, cus!xhsdom khusens-
+Gen: 128 | Fitness: 15 | Konwledge spgbks, cus!xhsdom khutens-
+Gen: 129 | Fitness: 14 | Konwledge spebks, cus!xhsdom khusens-
+Gen: 130 | Fitness: 13 | Konwledge spebks, cus!xhsdom khutens-
+Gen: 131 | Fitness: 12 | Konwledge spebks, bus!xhsdom khutens-
+Gen: 132 | Fitness: 11 | Konwledge spebks, bus!xhsdom khrtens-
+Gen: 133 | Fitness: 10 | Konwledge speaks, bus!xhsdom khrtens-
+Gen: 134 | Fitness: 9 | Konwledge speaks, bus!whsdom khrtens-
+Gen: 135 | Fitness: 8 | Konwledge speaks, but!whsdom khrtens-
+Gen: 136 | Fitness: 7 | Knnwledge speaks, but!whsdom khrtens-
+Gen: 137 | Fitness: 6 | Knnwledge speaks, but whsdom khrtens-
+Gen: 138 | Fitness: 5 | Knnwledge speaks, but whsdom kirtens-
+Gen: 139 | Fitness: 4 | Knowledge speaks, but whsdom kirtens-
+Gen: 140 | Fitness: 3 | Knowledge speaks, but whsdom kistens-
+Gen: 141 | Fitness: 2 | Knowledge speaks, but whsdom kistens.
+Gen: 142 | Fitness: 1 | Knowledge speaks, but whsdom listens.
+Gen: 143 | Fitness: 0 | Knowledge speaks, but wisdom listens.
+Elapsed time: 00:00:00.2670000
+Press any key to continue . . .
