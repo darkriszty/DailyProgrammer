@@ -85,8 +85,8 @@ class Rect(Shape):
 
     _topLeft = Point2D()
     _widthAndHeight = Point2D()
-    # from top clockwise to left
-    _lines = [ Line(), Line(), Line(), Line() ]
+    # contains the lines: top, right, bottom, left
+    _lines = []
 
     def setTopLeft(self, topLeft):
         self._topLeft = topLeft
@@ -101,21 +101,31 @@ class Rect(Shape):
             line.setColor(self.getColor())
 
     def _updateLines(self):
+        self._lines = []
+        
         # top line
-        self._lines[0].p1 = Point2D(self._topLeft.x, self._topLeft.y)
-        self._lines[0].p2 = Point2D(self._lines[0].p1.x + self._widthAndHeight.x - 1, self._lines[0].p1.y)
+        line0 = Line()
+        line0.p1 = Point2D(self._topLeft.x, self._topLeft.y)
+        line0.p2 = Point2D(line0.p1.x + self._widthAndHeight.x - 1, line0.p1.y)
+        self._lines.append(line0)
 
         # right side line
-        self._lines[1].p1 = Point2D(self._lines[0].p2.x, self._lines[0].p2.y)
-        self._lines[1].p2 = Point2D(self._lines[1].p1.x, self._lines[1].p1.y + self._widthAndHeight.y - 1)
+        line1 = Line()
+        line1.p1 = Point2D(line0.p2.x, line0.p2.y)
+        line1.p2 = Point2D(line1.p1.x, line1.p1.y + self._widthAndHeight.y - 1)
+        self._lines.append(line1)
 
         # bottom line
-        self._lines[2].p1 = Point2D(self._lines[1].p2.x, self._lines[1].p2.y)
-        self._lines[2].p2 = Point2D(self._lines[0].p1.x, self._lines[2].p1.y)
+        line2 = Line()
+        line2.p1 = Point2D(line1.p2.x, line1.p2.y)
+        line2.p2 = Point2D(line2.p1.x, line2.p1.y)
+        self._lines.append(line2)
 
         # left side line
-        self._lines[3].p1 = Point2D(self._lines[2].p2.x, self._lines[2].p2.y)
-        self._lines[3].p2 = Point2D(self._lines[0].p1.x, self._lines[0].p1.y)
+        line3 = Line()
+        line3.p1 = Point2D(line2.p2.x, line2.p2.y)
+        line3.p2 = Point2D(line0.p1.x, line0.p1.y)
+        self._lines.append(line3)
 
     def draw(self, board):
         for line in self._lines:
