@@ -59,22 +59,14 @@ class Line(Shape):
     p2 = Point2D()
 
     def draw(self, board):
-        # Bresenham algorithm
-        dx = self.p2.x-self.p1.x
-        dy = self.p2.y-self.p1.y
-        D = 2*dy - dx
-        board.drawPixel(self.getColor(), self.p1)
-        y = self.p1.y
-        if D > 0:
-            y = y+1
-            D = D - (2*dx)
-        x = self.p1.x + 1
+        # naive line drawing algorithm
+        dx = self.p2.x - self.p1.x
+        dy = self.p2.y - self.p1.y
+
+        x = self.p1.x
         while x < self.p2.x:
-            board.drawPixel(self.getColor(), Point2D(x, y))
-            D = D + (2*dy)
-            if D > 0:
-                y = y+1
-                D = D - (2*dx)
+            y = self.p1.y + dy * (x - self.p1.x) / dx
+            board.drawPixel(self.getColor(), Point2D(int(x), int(y)))
             x += 1
 
     def _colorUpdated(self):
