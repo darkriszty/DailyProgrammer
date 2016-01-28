@@ -60,12 +60,24 @@ class Line(Shape):
 
     def draw(self, board):
         # naive line drawing algorithm
-        dx = self.p2.x - self.p1.x
-        dy = self.p2.y - self.p1.y
+        dx = dy = x1 = x2 = y1 = y2 = 0
+        if (self.p2.x > self.p1.x):
+            x1 = self.p1.x
+            y1 = self.p1.y
+            x2 = self.p2.x
+            y2 = self.p2.y
+        else:
+            x1 = self.p2.x
+            y1 = self.p2.y
+            x2 = self.p1.x
+            y2 = self.p1.y
 
-        x = self.p1.x
-        while x < self.p2.x:
-            y = self.p1.y + dy * (x - self.p1.x) / dx
+        dx = x2 - x1
+        dy = y2 - y1
+
+        x = x1
+        while x < x2:
+            y = y1 + dy * (x - x1) / dx
             board.drawPixel(self.getColor(), Point2D(int(x), int(y)))
             x += 1
 
