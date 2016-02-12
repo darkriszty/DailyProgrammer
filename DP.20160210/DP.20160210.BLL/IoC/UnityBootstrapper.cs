@@ -1,4 +1,5 @@
 ﻿using DP._20160210.BLL.RPN;
+using DP._20160210.BLL.RPN.Validation;
 using Microsoft.Practices.Unity;
 
 namespace DP._20160210.BLL.IoC
@@ -15,6 +16,7 @@ namespace DP._20160210.BLL.IoC
 		{
 			container.RegisterType<ITokenInfoProvider, TokenInfoProvider>();
 			container.RegisterType<IRpnCalculator, RpnCalculator>();
+			container.RegisterType<IRpnInputValidator, RpnInputValidator>();
 
 			return container;
 		}
