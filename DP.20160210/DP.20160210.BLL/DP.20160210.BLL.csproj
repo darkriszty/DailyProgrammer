@@ -41,6 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RPN\ITokenInfoProvider.cs" />
+    <Compile Include="RPN\TokenInfoProvider.cs" />
+    <Compile Include="RPN\IRpnCalculator.cs" />
+    <Compile Include="RPN\OperationType.cs" />
+    <Compile Include="RPN\RpnCalculator.cs" />
+    <Compile Include="RPN\TokenType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
