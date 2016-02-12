@@ -10,6 +10,23 @@
 		/// </summary>
 		public TokenType GetTokenType(string input)
 		{
+			// check if it is a value
+			double value;
+			if (double.TryParse(input, out value))
+			{
+				return TokenType.Value;
+			}
+
+			// if it's a single char then check if it is a known operation type
+			if (input.Length == 1)
+			{
+				OperationType operationType = GetOperationType(input[0]);
+				if (operationType != OperationType.Unkown)
+				{
+					return TokenType.Operator;
+				}
+			}
+
 			return TokenType.Unkown;
 		}
 
@@ -20,6 +37,18 @@
 		/// <returns>The type of operation if found; Unkown otherwise.</returns>
 		public OperationType GetOperationType(char input)
 		{
+			switch (input)
+			{
+				case '+':
+					return OperationType.Addition;
+				case '-':
+					return OperationType.Subtraction;
+				case '*':
+					return OperationType.Multiplication;
+				case '/':
+					return OperationType.Division;
+			}
+
 			return OperationType.Unkown;
 		}
 	}
