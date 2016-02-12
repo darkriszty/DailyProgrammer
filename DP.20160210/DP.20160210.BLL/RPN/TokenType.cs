@@ -5,7 +5,8 @@
 	/// </summary>
 	public enum TokenType
 	{
+		Unkown,
 		Operator,
-		Value
+		Value,
 	}
 }

@@ -10,7 +10,7 @@
 		/// </summary>
 		public TokenType GetTokenType(string input)
 		{
-			return TokenType.Value;
+			return TokenType.Unkown;
 		}
 
 		/// <summary>
