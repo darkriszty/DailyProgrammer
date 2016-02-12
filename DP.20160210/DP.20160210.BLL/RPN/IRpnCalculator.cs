@@ -9,7 +9,7 @@ namespace DP._20160210.BLL.RPN
 		/// Calculates and returns the result of the input string.
 		/// </summary>
 		/// <param name="input">The input string in RPN</param>
-		/// <returns>The calculated value.</returns>
-		decimal GetResult(string input);
+		/// <returns>The calculated result.</returns>
+		RpnResult GetResult(string input);
 	}
 }
