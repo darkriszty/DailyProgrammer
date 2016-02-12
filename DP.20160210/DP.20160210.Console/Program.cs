@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DP._20160210.BLL.IoC;
+using Microsoft.Practices.Unity;
 
 namespace DP._20160210.Console
 {
@@ -13,6 +10,8 @@ namespace DP._20160210.Console
 		*/
 		static void Main(string[] args)
 		{
+			IUnityContainer container = new UnityContainer();
+			container.RegisterServices();
 		}
 	}
 }
