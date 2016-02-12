@@ -59,6 +59,9 @@
     <Compile Include="IoC\UnityBootstrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RPN\ITokenInfoProvider.cs" />
+    <Compile Include="RPN\Validation\IRpnInputValidator.cs" />
+    <Compile Include="RPN\Validation\RpnInputValidationResult.cs" />
+    <Compile Include="RPN\Validation\RpnInputValidator.cs" />
     <Compile Include="RPN\TokenInfoProvider.cs" />
     <Compile Include="RPN\IRpnCalculator.cs" />
     <Compile Include="RPN\OperationType.cs" />

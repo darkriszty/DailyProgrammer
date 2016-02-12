@@ -66,6 +66,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="RPN\RpnInputValidatorTests.cs" />
     <Compile Include="RPN\TokenInfoProviderTests.cs" />
     <Compile Include="RPN\RpnCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
