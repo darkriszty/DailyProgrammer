@@ -104,7 +104,7 @@ namespace DP._20160210.Tests.RPN
 			var validator = container.Resolve<IRpnInputValidator>();
 
 			// act
-			RpnInputValidationResult validationResult = validator.Validate(new[] { "+", "-", "*", "/" });
+			RpnInputValidationResult validationResult = validator.Validate(new[] { "1", "1", "+", "1", "-", "1", "*", "1", "/" });
 
 			// assert
 			Assert.IsNotNull(validationResult);
@@ -121,7 +121,7 @@ namespace DP._20160210.Tests.RPN
 			var validator = container.Resolve<IRpnInputValidator>();
 
 			// act
-			RpnInputValidationResult validationResult = validator.Validate(new[] { "1234", "-0.523", "+", "95", "*", "/", "2456.21" });
+			RpnInputValidationResult validationResult = validator.Validate(new[] { "1", "5", "100", "5", "-", "*", "9", "-", "10.55", "+", "+" });
 
 			// assert
 			Assert.IsNotNull(validationResult);
@@ -138,7 +138,7 @@ namespace DP._20160210.Tests.RPN
 			var validator = container.Resolve<IRpnInputValidator>();
 
 			// act
-			RpnInputValidationResult validationResult = validator.Validate(new[] { "1", "-", "-9.333", "*" });
+			RpnInputValidationResult validationResult = validator.Validate(new[] { "1", "2", "-", "-9.333", "*" });
 
 			// assert
 			Assert.IsNotNull(validationResult);
