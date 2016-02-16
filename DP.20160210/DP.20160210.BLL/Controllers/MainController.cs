@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using DP._20160210.BLL.Models;
 
 namespace DP._20160210.BLL.Controllers
@@ -16,12 +17,17 @@ namespace DP._20160210.BLL.Controllers
 		/// <returns>The result with the solution marked as found or not.</returns>
 		public async Task<ProblemSolution> FindSolution(string input, decimal expectedResult)
 		{
+			Stopwatch sw = Stopwatch.StartNew();
+
 			await Task.FromResult(0);
+
+			sw.Stop();
 
 			return new ProblemSolution
 			{
 				SolutionFound = false,
-				NumberOfTries = 0
+				NumberOfTries = 0,
+				ElapsedTime = sw.Elapsed,
 			};
 		}
 	}

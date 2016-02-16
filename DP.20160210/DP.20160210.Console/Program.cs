@@ -33,6 +33,7 @@ namespace DP._20160210.Console
 
 			System.Console.WriteLine("Solution found: " + (problemResult.SolutionFound ? "yes" : "no"));
 			System.Console.WriteLine("Number of combinations tried: " + problemResult.NumberOfTries);
+			System.Console.WriteLine("Total processing time: " + problemResult.ElapsedTime.ToString(@"dd\.hh\:mm\:ss"));
 		}
 	}
 }

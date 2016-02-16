@@ -1,4 +1,6 @@
-﻿namespace DP._20160210.BLL.Models
+﻿using System;
+
+namespace DP._20160210.BLL.Models
 {
 	/// <summary>
 	/// Encapsulates the properties of the problem solution.
@@ -14,5 +16,10 @@
 		/// Gets or sets the number of tries it took to reach a conclusion to the problem
 		/// </summary>
 		public ulong NumberOfTries { get; set; }
+
+		/// <summary>
+		/// Gets or sets the time that was needed in order to generate the solution
+		/// </summary>
+		public TimeSpan ElapsedTime { get; set; }
 	}
 }
