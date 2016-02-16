@@ -17,6 +17,7 @@ namespace DP._20160210.BLL.IoC
 			container.RegisterType<ITokenInfoProvider, TokenInfoProvider>();
 			container.RegisterType<IRpnCalculator, RpnCalculator>();
 			container.RegisterType<IRpnInputValidator, RpnInputValidator>();
+			container.RegisterType<IRpnToParenthesisNotationConverter, RpnToParenthesisNotationConverterConverter>();
 
 			return container;
 		}
