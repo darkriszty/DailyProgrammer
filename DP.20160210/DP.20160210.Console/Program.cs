@@ -1,4 +1,7 @@
-﻿using DP._20160210.BLL.IoC;
+﻿using System.Threading.Tasks;
+using DP._20160210.BLL.Controllers;
+using DP._20160210.BLL.IoC;
+using DP._20160210.BLL.Models;
 using Microsoft.Practices.Unity;
 
 namespace DP._20160210.Console
@@ -10,8 +13,26 @@ namespace DP._20160210.Console
 		*/
 		static void Main(string[] args)
 		{
+			Task main = MainAsync(args);
+			main.Wait();
+
+			if (System.Diagnostics.Debugger.IsAttached)
+			{
+				System.Console.WriteLine("Press any key to exit . . .");
+				System.Console.ReadKey();
+			}
+		}
+
+		static async Task MainAsync(string[] args)
+		{
 			IUnityContainer container = new UnityContainer();
 			container.RegisterServices();
+
+			MainController controller = container.Resolve<MainController>();
+			ProblemSolution problemResult = await controller.FindSolution("10 33 23", 0);
+
+			System.Console.WriteLine("Solution found: " + (problemResult.SolutionFound ? "yes" : "no"));
+			System.Console.WriteLine("Number of combinations tried: " + problemResult.NumberOfTries);
 		}
 	}
 }

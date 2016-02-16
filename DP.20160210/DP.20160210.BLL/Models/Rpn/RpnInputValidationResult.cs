@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DP._20160210.BLL.RPN.Validation
+namespace DP._20160210.BLL.Models.Rpn
 {
 	/// <summary>
 	/// Encapsulates the properties of a RPN input validation.

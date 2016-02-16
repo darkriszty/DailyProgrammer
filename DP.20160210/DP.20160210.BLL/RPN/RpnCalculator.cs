@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DP._20160210.BLL.Models.Rpn;
 using DP._20160210.BLL.RPN.Validation;
 
 namespace DP._20160210.BLL.RPN

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DP._20160210.BLL.Models.Rpn;
 
 namespace DP._20160210.BLL.RPN.Validation
 {

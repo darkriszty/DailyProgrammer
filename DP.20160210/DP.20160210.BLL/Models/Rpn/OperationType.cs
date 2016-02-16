@@ -1,4 +1,4 @@
-﻿namespace DP._20160210.BLL.RPN
+﻿namespace DP._20160210.BLL.Models.Rpn
 {
 	/// <summary>
 	/// Enumeration with the basic arithmetic operations

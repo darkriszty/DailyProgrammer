@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using DP._20160210.BLL.IoC;
+using DP._20160210.BLL.Models.Rpn;
 using DP._20160210.BLL.RPN.Validation;
 using Microsoft.Practices.Unity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

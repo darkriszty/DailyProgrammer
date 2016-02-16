@@ -1,4 +1,6 @@
-﻿namespace DP._20160210.BLL.RPN
+﻿using DP._20160210.BLL.Models.Rpn;
+
+namespace DP._20160210.BLL.RPN
 {
 	/// <summary>
 	/// Responsible to provide information about the input tokens in RPN.
