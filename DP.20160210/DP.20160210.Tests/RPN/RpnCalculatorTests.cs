@@ -180,6 +180,23 @@ namespace DP._20160210.Tests.RPN
 		}
 
 		[TestMethod]
+		public void Test_GetResult_Mixed2()
+		{
+			var container = new UnityContainer();
+			container.RegisterServices();
+			var calculator = container.Resolve<IRpnCalculator>();
+
+			// act
+			RpnResult result = calculator.GetResult("1 5 100 5 - * 9 - 10 + +");
+
+			// assert
+			Assert.IsNotNull(result);
+			Assert.IsTrue(result.CalculationResult.HasValue);
+			Assert.IsTrue(!result.ErrorMessages.Any());
+			Assert.AreEqual(result.CalculationResult.Value, 477);
+		}
+
+		[TestMethod]
 		public void Test_GetResult_NoOpFail()
 		{
 			var container = new UnityContainer();
