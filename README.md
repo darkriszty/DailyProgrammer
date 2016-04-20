@@ -6,3 +6,4 @@ Random challenges from /r/dailyprogrammer.
 * 20160104 - Drawing in netpbm format (my first ever python program)
 * 20160210 - Countdown - number game (c#)
 * 20160404 - Magic square (c#)
+* 20160418 - Shannon entropy (c#)
