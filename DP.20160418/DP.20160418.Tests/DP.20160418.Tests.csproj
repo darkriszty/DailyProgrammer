@@ -53,6 +53,12 @@
     <Compile Include="ShannonEntropyCalculatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DP.20160418\DP.20160418.csproj">
+      <Project>{65EC3BE7-7B9C-4637-AA03-B4D7A35BF485}</Project>
+      <Name>DP.20160418</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
