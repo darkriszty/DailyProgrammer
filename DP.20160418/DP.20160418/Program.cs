@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DP._20160418
 {
@@ -13,9 +9,11 @@ namespace DP._20160418
 	{
 		static void Main(string[] args)
 		{
-			decimal entropy = ShannonEntropyCalculator.GetEntropy("Hello, world!");
+			const string input = "Hello, world!";
 
-			Console.WriteLine(entropy);
+			double entropy = ShannonEntropyCalculator.GetEntropy(input);
+
+			Console.WriteLine($"The Shannon entropy of \"{input}\" is {entropy}");
 
 			if (System.Diagnostics.Debugger.IsAttached)
 				Console.ReadKey(true);

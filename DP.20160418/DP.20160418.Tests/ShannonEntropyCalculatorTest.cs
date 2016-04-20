@@ -6,6 +6,11 @@ namespace DP._20160418.Tests
 	[TestClass]
 	public class ShannonEntropyCalculatorTest
 	{
+		/// <summary>
+		/// The margin of error for the test results.
+		/// </summary>
+		private const double EPSILON = 0.000001;
+
 		[TestMethod]
 		[ExpectedException(typeof(ArgumentNullException))]
 		public void Test_GetEntropy_NoInput_Exception()
@@ -14,7 +19,7 @@ namespace DP._20160418.Tests
 			string input = null;
 
 			// act
-			decimal entropy = ShannonEntropyCalculator.GetEntropy(input);
+			double entropy = ShannonEntropyCalculator.GetEntropy(input);
 
 			// assert
 			// exception excepted
@@ -27,10 +32,10 @@ namespace DP._20160418.Tests
 			string input = "1223334444";
 
 			// act
-			decimal entropy = ShannonEntropyCalculator.GetEntropy(input);
+			double entropy = ShannonEntropyCalculator.GetEntropy(input);
 
 			// assert
-			Assert.AreEqual(1.84644, entropy);
+			Assert.IsTrue(1.84644 - entropy < EPSILON);
 		}
 
 		[TestMethod]
@@ -40,10 +45,10 @@ namespace DP._20160418.Tests
 			string input = "Hello, world!";
 
 			// act
-			decimal entropy = ShannonEntropyCalculator.GetEntropy(input);
+			double entropy = ShannonEntropyCalculator.GetEntropy(input);
 
 			// assert
-			Assert.AreEqual(3.18083, entropy);
+			Assert.IsTrue(3.18083- entropy < EPSILON);
 		}
 
 		[TestMethod]
@@ -53,10 +58,10 @@ namespace DP._20160418.Tests
 			string input = "122333444455555666666777777788888888";
 
 			// act
-			decimal entropy = ShannonEntropyCalculator.GetEntropy(input);
+			double entropy = ShannonEntropyCalculator.GetEntropy(input);
 
 			// assert
-			Assert.AreEqual(2.794208683, entropy);
+			Assert.IsTrue(2.794208683- entropy < EPSILON);
 		}
 
 		[TestMethod]
@@ -66,10 +71,10 @@ namespace DP._20160418.Tests
 			string input = "563881467447538846567288767728553786";
 
 			// act
-			decimal entropy = ShannonEntropyCalculator.GetEntropy(input);
+			double entropy = ShannonEntropyCalculator.GetEntropy(input);
 
 			// assert
-			Assert.AreEqual(2.794208683, entropy);
+			Assert.IsTrue(2.794208683- entropy < EPSILON);
 		}
 
 		[TestMethod]
@@ -79,10 +84,10 @@ namespace DP._20160418.Tests
 			string input = "https://www.reddit.com/r/dailyprogrammer";
 
 			// act
-			decimal entropy = ShannonEntropyCalculator.GetEntropy(input);
+			double entropy = ShannonEntropyCalculator.GetEntropy(input);
 
 			// assert
-			Assert.AreEqual(4.056198332, entropy);
+			Assert.IsTrue(4.056198332- entropy < EPSILON);
 		}
 
 		[TestMethod]
@@ -92,10 +97,10 @@ namespace DP._20160418.Tests
 			string input = "int main(int argc, char *argv[])";
 
 			// act
-			decimal entropy = ShannonEntropyCalculator.GetEntropy(input);
+			double entropy = ShannonEntropyCalculator.GetEntropy(input);
 
 			// assert
-			Assert.AreEqual(3.866729296, entropy);
+			Assert.IsTrue(3.866729296- entropy < EPSILON);
 		}
 	}
 }
