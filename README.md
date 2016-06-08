@@ -7,3 +7,4 @@ Random challenges from /r/dailyprogrammer.
 * 20160210 - Countdown - number game (c#)
 * 20160404 - Magic square (c#)
 * 20160418 - Shannon entropy (c#)
+* 20160607 - Transpose matrix (nodejs)
