@@ -8,4 +8,4 @@ Random challenges from /r/dailyprogrammer.
 * 20160404 - Magic square (c#)
 * 20160418 - Shannon entropy (c#)
 * 20160607 - Transpose matrix (nodejs)
-* 20160523 - Network and Cards, Part 1(c#, service fabric)
+* 20160523 - Network and Cards, Part 1(c#)
